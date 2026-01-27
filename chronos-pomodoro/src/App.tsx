@@ -1,35 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+//Utilizar PascalCase
+//App
+//ExemploDeComponente
 
-function App() {
-  const [count, setCount] = useState(0)
+export function App() {
+  console.log('Ola, mundo!');
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Testando</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+  return (//Podemos utilizar <Fragment> </Fragment> como elemento pai também, mesma coisa que <> </>.
+    <> 
+      <h1>Olá mundo!</h1>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni dolores
+        iusto similique ipsam non modi placeat voluptates repellat itaque,
+        maxime hic in temporibus ab voluptatum libero voluptatem consectetur
+        sapiente saepe!
       </p>
     </>
-  )
+  );
 }
-
-export default App
