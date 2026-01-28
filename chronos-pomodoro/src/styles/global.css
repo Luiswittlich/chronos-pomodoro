@@ -1,0 +1,10 @@
+body{
+    background-color: var(--primary);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+}
+
+h1{
+    color: white;
+    text-align: center;
+}
