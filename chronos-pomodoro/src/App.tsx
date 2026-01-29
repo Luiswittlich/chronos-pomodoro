@@ -6,13 +6,17 @@ import { Heading } from './components/Heading';
 
 import './styles/theme.css'
 import './styles/global.css'
+import { TimerIcon } from 'lucide-react';
 
 export function App() {
-  console.log('Ola, mundo!');
 
   return (//Podemos utilizar <Fragment> </Fragment> como elemento pai também, mesma coisa que <> </>.
     <> 
-      <Heading/>
+      <Heading>
+        Olá, Mundo! 
+        <button><TimerIcon/></button>
+      </Heading>
+
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni dolores
         iusto similique ipsam non modi placeat voluptates repellat itaque,
