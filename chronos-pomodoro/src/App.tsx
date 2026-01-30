@@ -2,28 +2,29 @@
 //App
 //ExemploDeComponente
 
-import './styles/theme.css'
-import './styles/global.css'
-import { Container } from './components/Container';
-import { Heading } from './components/Heading';
+import { Container } from './components/Container/Index';
+import { Heading } from './components/Heading/Index';
+import { Logo } from './components/Logo/Index';
+
+import './styles/theme.css';
+import './styles/global.css';
 
 export function App() {
-
-  return (//Podemos utilizar <Fragment> </Fragment> como elemento pai também, mesma coisa que <> </>.
-    <> 
+  return (
+    //Podemos utilizar <Fragment> </Fragment> como elemento pai também, mesma coisa que <> </>.
+    <>
       <Container>
-          <Heading>Testando Meu componente Heading</Heading>
-          <section>LOGO</section>
-        </Container>
+        <Logo/>
+      </Container>
       <Container>
-          <section>MENU</section>
-        </Container>
+        <Heading>MENU</Heading>
+      </Container>
       <Container>
-          <section>FORM</section>
-        </Container>
+        <section>FORM</section>
+      </Container>
       <Container>
-          <section>FORM</section>
-        </Container>
+        <section>FORM</section>
+      </Container>
     </>
   );
 }
