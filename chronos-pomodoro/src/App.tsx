@@ -47,7 +47,7 @@ export function App() {
           </div>
 
           <div className="formRow">
-            <DefaultButton icon={<PlayCircleIcon/>}/>
+            <DefaultButton color='green' icon={<PlayCircleIcon/>}/>
           </div>
         </form>
       </Container>
