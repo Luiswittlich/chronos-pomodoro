@@ -14,7 +14,6 @@ export function Menu(){
         const nextTheme = prevTheme === 'dark'?'light':'dark' //Verifica o tema e altera
         return nextTheme;
       })
-      console.log('clicado')
     }
 
     useEffect(()=>{
