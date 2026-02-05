@@ -27,35 +27,37 @@ export function Menu(){
         document.documentElement.setAttribute('data-theme',theme)
         localStorage.setItem('theme', theme)
     },[theme]); //Executa apenas quando o valor de theme muda
-    return <nav className={styles.menu}>
-        <a className={styles.menuLink} 
-        href="#" 
-        aria-label='Ir para a Home' 
-        title='Ir para a Home'
-        >
-            <HouseIcon/> 
-        </a>
-        <a className={styles.menuLink} 
-        href="#"
-        aria-label='Ver Historico' 
-        title='Ver Historico'
-        >
-            <HistoryIcon/> 
-        </a>
-        <a className={styles.menuLink} 
-        href="#"
-        aria-label='Ir para página de Configurações' 
-        title='Ir para a Configurações'
-        >
-            <SettingsIcon/> 
-        </a>
-        <a className={styles.menuLink} 
-        href="#"
-        aria-label='Mudar Tema' 
-        title='Mudar Tema'
-        onClick={handleThemeChange}
-        >
-            {nextThemeIcon[theme]} 
-        </a>
-    </nav>
+
+    return (
+        <nav className={styles.menu}>
+            <a className={styles.menuLink} 
+            href="#" 
+            aria-label='Ir para a Home' 
+            title='Ir para a Home'
+            >
+                <HouseIcon/> 
+            </a>
+            <a className={styles.menuLink} 
+            href="#"
+            aria-label='Ver Historico' 
+            title='Ver Historico'
+            >
+                <HistoryIcon/> 
+            </a>
+            <a className={styles.menuLink} 
+            href="#"
+            aria-label='Ir para página de Configurações' 
+            title='Ir para a Configurações'
+            >
+                <SettingsIcon/> 
+            </a>
+            <a className={styles.menuLink} 
+            href="#"
+            aria-label='Mudar Tema' 
+            title='Mudar Tema'
+            onClick={handleThemeChange}
+            >
+                {nextThemeIcon[theme]} 
+            </a>
+        </nav>)
 }
