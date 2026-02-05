@@ -2,8 +2,7 @@ import { HistoryIcon, HouseIcon, SettingsIcon, SunIcon, } from 'lucide-react'
 import styles from './styles.module.css'
 import { useState, useEffect } from 'react'
 
-type AvailableThemes = 'dark' | 'light'
-
+type AvailableThemes = 'dark' | 'light' 
 
 export function Menu(){
     const[theme, setTheme] = useState<AvailableThemes>('dark')
@@ -18,7 +17,6 @@ export function Menu(){
 
     useEffect(()=>{
         document.documentElement.setAttribute('data-theme',theme)
-
         return ()=>{
             console.log('')
         }
