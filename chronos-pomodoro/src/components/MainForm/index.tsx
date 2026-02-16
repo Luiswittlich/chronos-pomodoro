@@ -7,8 +7,14 @@ import { DefaultInput } from "../DefaultInput";
 
 
 export function MainForm(){
+  function handleCreateNewTask(event:React.SubmitEvent<HTMLFormElement>){
+    event.preventDefault();
+    console.log('deu certo')
+  }
+
+
     return(
-        <form className={styles.form}>
+        <form onSubmit={handleCreateNewTask} className={styles.form}>
           <div className={styles.formRow}>
             <DefaultInput labelText='Task:' id='input' type='text' placeholder='Digite algo...' />
           </div>

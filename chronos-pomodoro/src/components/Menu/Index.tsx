@@ -47,7 +47,7 @@ export function Menu(){
             <a className={styles.menuLink} 
             href="#"
             aria-label='Ir para página de Configurações' 
-            title='Ir para a Configurações'
+            title='Ir para Configurações'
             >
                 <SettingsIcon/> 
             </a>
