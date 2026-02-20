@@ -7,7 +7,7 @@ import { DefaultInput } from "../DefaultInput";
 import { useRef } from 'react';
 import type { TaskModel } from '../../models/TaskModel';
 import { useTaskContext } from '../../contexts/TaskContext/useTaskContext';
-import { getNextCicle } from '../../utils/getNextCycle';
+import { getNextCycle } from '../../utils/getNextCycle';
 import { getNextCicleType } from '../../utils/getNextCycleType';
 import { formatSecondsToMinutes } from '../../utils/formatSecondsToMinutes';
 
@@ -16,7 +16,7 @@ export function MainForm(){
   const { state, setState } = useTaskContext()
   const taskNameInput = useRef<HTMLInputElement>(null);
 
-  const nextCycle = getNextCicle(state.currentCycle);
+  const nextCycle = getNextCycle(state.currentCycle);
   const nextCycleType = getNextCicleType(nextCycle);
   
 
@@ -76,10 +76,12 @@ export function MainForm(){
             <p>Próximo intervalo é de 25 min.</p>
           </div>
 
+          {state.currentCycle > 0 &&(
+
           <div className={styles.formRow}>
             <Cycles />
           </div>
-
+          )}
           <div className={styles.formRow}>
             <DefaultButton color='green' icon={<PlayCircleIcon/>}/>
           </div>
