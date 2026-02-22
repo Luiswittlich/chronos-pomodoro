@@ -1,6 +1,6 @@
 import styles from './styles.module.css'
 
-import { PlayCircleIcon } from "lucide-react";
+import { PlayCircleIcon, StopCircleIcon } from "lucide-react";
 import { Cycles } from "../Cycles";
 import { DefaultButton } from "../DefaultButton";
 import { DefaultInput } from "../DefaultInput";
@@ -59,6 +59,29 @@ export function MainForm(){
     })
   }
 
+    function handleStopTask(){
+      return (
+        setState(prevState => {
+      return {
+        ...prevState,
+          activeTask:null, 
+          secondsRemaining: 0,
+          formattedSecondsReamining: '00:00',
+          tasks: prevState.tasks.map(tasks => {
+            if (prevState.activeTask && prevState.activeTask.id === tasks.id){
+              return {
+                ...tasks,
+                interruptDate: Date.now()
+              }
+            }
+            return tasks
+          })
+      }
+    })
+      )
+        
+      
+    }
 
     return(
         <form onSubmit={handleCreateNewTask} className={styles.form}>
@@ -69,6 +92,7 @@ export function MainForm(){
               type='text' 
               placeholder='Digite algo...' 
               ref={taskNameInput}
+              disabled= {!!state.activeTask}
             />
           </div>
 
@@ -83,7 +107,26 @@ export function MainForm(){
           </div>
           )}
           <div className={styles.formRow}>
-            <DefaultButton color='green' icon={<PlayCircleIcon/>}/>
+            {!state.activeTask && (
+              <DefaultButton 
+              aria-label='Iniciar nova Tarefa' 
+              title='Iniciar nova tarefa' 
+              type='submit' 
+              icon={<PlayCircleIcon/>}
+              key='Submit_button'/>
+            )} 
+            
+            {!! state.activeTask && (
+              <DefaultButton 
+              onClick={handleStopTask}
+              aria-label='Interromper tarefa atual' 
+              title='Interromper tarefa atual' 
+              type='button' 
+              color='red'
+              icon={<StopCircleIcon/>}
+              key='Stop_button'/>
+            )} 
+            
           </div>
         </form>
     )
