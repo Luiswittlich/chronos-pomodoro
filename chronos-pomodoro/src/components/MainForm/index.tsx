@@ -5,12 +5,13 @@ import { Cycles } from "../Cycles";
 import { DefaultButton } from "../DefaultButton";
 import { DefaultInput } from "../DefaultInput";
 import { useRef } from 'react';
-import type { TaskModel } from '../../models/TaskModel';
 import { useTaskContext } from '../../contexts/TaskContext/useTaskContext';
 import { getNextCycle } from '../../utils/getNextCycle';
 import { getNextCicleType } from '../../utils/getNextCycleType';
 import { TaskActionTypes } from '../../contexts/TaskContext/taskActions';
 import { TipsForTasks } from '../Tips';
+
+import type { TaskModel } from '../../models/TaskModel';
 
 export function MainForm(){
   const { state, dispatch } = useTaskContext()
@@ -46,10 +47,6 @@ export function MainForm(){
 
     dispatch({type: TaskActionTypes.START_TASK, payload: newTask, })
   }
-
-  const worker = new Worker(new URL('../../workers/timerWorker.js',import.meta.url));
-  worker.postMessage('Ola mundo!')
-
     function handleStopTask(){
       dispatch({type: TaskActionTypes.STOP_TASK})
     }
