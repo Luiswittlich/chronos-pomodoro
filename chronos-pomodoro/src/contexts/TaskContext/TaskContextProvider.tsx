@@ -22,9 +22,10 @@ export function TaskContextProvider({children}: TaskContextPrviderProps){
         if(countDownSeconds <= 0){
             if(playBeepRef.current){
                 playBeepRef.current();
+                
             }
             dispatch({
-                type:TaskActionTypes.COMPLETE_TASK
+                type:TaskActionTypes.COMPLETE_TASK,
             })
             worker.terminate()
         } else {
@@ -46,6 +47,8 @@ export function TaskContextProvider({children}: TaskContextPrviderProps){
     useEffect(()=>{
         if (state.activeTask && playBeepRef.current === null){
             playBeepRef.current = loadBeep()
+        } else {
+            playBeepRef.current = null
         }
     },[state.activeTask])
 
